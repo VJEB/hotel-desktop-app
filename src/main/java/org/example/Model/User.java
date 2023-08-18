@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private byte[] user_id;
 
     private String username;
@@ -15,8 +15,7 @@ public class User {
 
     private boolean is_admin;
 
-    public User(byte[] user_id, String username, String user_password, boolean is_admin) {
-        this.user_id = user_id;
+    public User(String username, String user_password, boolean is_admin) {
         this.username = username;
         this.user_password = user_password;
         this.is_admin = is_admin;

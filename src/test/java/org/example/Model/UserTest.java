@@ -36,7 +36,7 @@ public class UserTest {
     public void storeUsersInMySQL() {
 
         byte[] byteArray = { 72, 101, 108, 108, 111 }; // Represents the ASCII values of the characters "Hello"
-        User user = new User(byteArray, "Lisa", "1234", false);
+        User user = new User( "Lisa", "1234", false);
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
 
