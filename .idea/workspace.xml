@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+    <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="First commit 15-08-2023">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Rect Light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/loginImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/Model/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/HibernateUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -29,6 +39,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2U3DmvIuxWae9t0CRO62Dnpdp9c" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,12 +52,78 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/HP GAMING JAFET/javafx-sdk-20.0.2/lib/javafx.web.jar",
     "onboarding.tips.debug.path": "C:/Users/HP GAMING JAFET/IdeaProjects/Hotel-desktop-app/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.60229886",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HP GAMING JAFET\IdeaProjects\Hotel-desktop-app\src\main\resources" />
+      <recent name="C:\Users\HP GAMING JAFET\IdeaProjects\Hotel-desktop-app\src\main\resources\Images" />
+      <recent name="C:\Users\HP GAMING JAFET\IdeaProjects\Hotel-desktop-app\src\main\java\org\example" />
+      <recent name="C:\Users\HP GAMING JAFET\IdeaProjects\Hotel-desktop-app\src\main\resources\Fxmls" />
+      <recent name="C:\Users\HP GAMING JAFET\IdeaProjects\Hotel-desktop-app\src\main\java\org\example\View\Images" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example.Controller" />
+      <recent name="org.example" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UserTest.storeUsersInMySQL">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="Hotel-desktop-app" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\HP GAMING JAFET\javafx-sdk-20.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hotel-desktop-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.Model" />
+      <option name="MAIN_CLASS_NAME" value="org.example.Model.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.storeUsersInMySQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hotel-desktop-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.Model" />
+      <option name="MAIN_CLASS_NAME" value="org.example.Model.UserTest" />
+      <option name="METHOD_NAME" value="storeUsersInMySQL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserTest.storeUsersInMySQL" />
+        <item itemvalue="JUnit.UserTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,17 +133,33 @@
       <option name="presentableId" value="Default" />
       <updated>1692153972943</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit 15-08-2023">
+      <created>1692157546937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692157546937</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit 15-08-2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit 15-08-2023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/Model/UserTest.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
