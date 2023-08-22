@@ -1,3 +1,41 @@
-.login-panel {
-    -fx-background-color: linear-gradient(to left, #fff, #4099BA);
+.loginExitButton {
+    -fx-background-color: #053445;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+
+.loginExitButton:hover {
+    -fx-background-color: red;
+}
+.loginTextAndPasswordField {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #053445;
+    -fx-border-radius: 0;
+    -fx-prompt-text-fill: gray;
+}
+.loginTextAndPasswordField:focused {
+    -fx-border-color: #1291bf;
+}
+
+.loginButton {
+    -fx-background-color: #053445;
+    -fx-border-radius: 2px;
+    -fx-cursor: hand;
+}
+
+.loginButton:hover {
+    -fx-background-color: #031b24;
+}
+.jfx-snackbar-content {
+    -fx-background-color: #053445;
+    -fx-pref-height: 35px;
+    -fx-min-height: 30px;
+    -fx-background-radius: 10 10 0 0;
+}
+.jfx-snackbar-content > .label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
 }

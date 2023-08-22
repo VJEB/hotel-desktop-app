@@ -9,11 +9,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.Controller.Login">
+<BorderPane fx:id="borderPane" stylesheets="@application.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Login">
    <right>
       <ImageView fitHeight="526.0" fitWidth="594.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -27,19 +27,76 @@
    <left>
       <VBox alignment="CENTER" prefHeight="474.0" prefWidth="356.0" style="-fx-background-color: #f4fafd;" BorderPane.alignment="CENTER">
          <children>
+            <HBox prefHeight="37.0" prefWidth="356.0">
+               <children>
+                  <Button fx:id="exitButton" mnemonicParsing="false" style="-fx-background-radius: 0;" styleClass="loginExitButton" stylesheets="@application.css" text="X" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="-95.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="356.0">
+               <children>
+                  <ImageView fitHeight="44.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/hotel.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="AMAZING HOTEL" textFill="#053445">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </HBox>
             <Label text="WELCOME" textFill="#053445">
                <font>
                   <Font name="System Bold" size="38.0" />
-               </font></Label>
-            <TextField fx:id="usernameField" maxWidth="200.0" promptText="USERNAME">
+               </font>
                <VBox.margin>
-                  <Insets bottom="20.0" top="40.0" />
+                  <Insets top="-40.0" />
+               </VBox.margin></Label>
+            <Label fx:id="usernameLabel" alignment="CENTER" text="USERNAME">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="130.0" top="40.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="usernameField" maxWidth="200.0" promptText="Enter your username" styleClass="loginTextAndPasswordField" stylesheets="@application.css">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
                </VBox.margin></TextField>
-            <PasswordField fx:id="passwordField" maxWidth="200.0" promptText="PASSWORD">
+            <Label fx:id="passwordLabel" alignment="CENTER" text="PASSWORD">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="130.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="passwordField" maxWidth="200.0" promptText="Enter your password" styleClass="loginTextAndPasswordField" stylesheets="@application.css">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin></PasswordField>
-            <Button fx:id="loginButton" onAction="#handleLoginButtonClick" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-color: #053445;" text="SIGN IN" textFill="WHITE" />
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLoginButtonClick" prefWidth="200.0" styleClass="loginButton" stylesheets="@application.css" text="SIGN IN" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
          </children>
       </VBox>
    </left>
