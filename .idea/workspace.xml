@@ -4,29 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="Third commit fixed 22-08-2023">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/GuestNationalities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Forms/guestForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Forms/reservationForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/group.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/invoice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/post.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/reservation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/userHomeViews/guestsView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/userHomeViews/invoicesView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/userHomeViews/reservationsView.fxml" afterDir="false" />
+    <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="Fourth commit 24-08-2023">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/FormHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/DAO/GuestDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Guest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/Model/GuestTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/UserHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/UserHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Forms/guestForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Forms/guestForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/userHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/userHome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Model/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Model/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +28,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +58,7 @@
     "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.42252067",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -84,7 +75,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GuestTest.deleteGuestFromMySQL">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Hotel-desktop-app" />
@@ -93,7 +84,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.encryptPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GuestTest.deleteGuestFromMySQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hotel-desktop-app" />
       <extension name="coverage">
         <pattern>
@@ -102,8 +93,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.Model" />
-      <option name="MAIN_CLASS_NAME" value="org.example.Model.UserTest" />
-      <option name="METHOD_NAME" value="encryptPassword" />
+      <option name="MAIN_CLASS_NAME" value="org.example.Model.GuestTest" />
+      <option name="METHOD_NAME" value="deleteGuestFromMySQL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GuestTest.storeGuestInMySQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hotel-desktop-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.Model" />
+      <option name="MAIN_CLASS_NAME" value="org.example.Model.GuestTest" />
+      <option name="METHOD_NAME" value="storeGuestInMySQL" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,22 +148,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.verifyIfUserExistsInDB_DAO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Hotel-desktop-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.Model" />
-      <option name="MAIN_CLASS_NAME" value="org.example.Model.UserTest" />
-      <option name="METHOD_NAME" value="verifyIfUserExistsInDB_DAO" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserTest.verifyUser_DAO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hotel-desktop-app" />
       <extension name="coverage">
@@ -173,13 +164,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.GuestTest.deleteGuestFromMySQL" />
+      <item itemvalue="JUnit.GuestTest.storeGuestInMySQL" />
+      <item itemvalue="JUnit.UserTest.getUserFromDB" />
+      <item itemvalue="JUnit.UserTest.storeUsersInMySQL" />
+      <item itemvalue="JUnit.UserTest.verifyUser_DAO" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GuestTest.deleteGuestFromMySQL" />
+        <item itemvalue="JUnit.GuestTest.storeGuestInMySQL" />
         <item itemvalue="JUnit.UserTest.storeUsersInMySQL" />
         <item itemvalue="JUnit.UserTest.verifyUser_DAO" />
         <item itemvalue="JUnit.UserTest.getUserFromDB" />
-        <item itemvalue="JUnit.UserTest.verifyIfUserExistsInDB_DAO" />
-        <item itemvalue="JUnit.UserTest.encryptPassword" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692725812347</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fourth commit 24-08-2023">
+      <option name="closed" value="true" />
+      <created>1692893432451</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692893432451</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -231,7 +238,18 @@
     <MESSAGE value="Second commit 17-08-2023" />
     <MESSAGE value="Second commit fixed 17-08-2023" />
     <MESSAGE value="Third commit fixed 22-08-2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third commit fixed 22-08-2023" />
+    <MESSAGE value="Fourth commit 24-08-2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourth commit 24-08-2023" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

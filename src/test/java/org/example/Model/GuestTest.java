@@ -1,19 +1,19 @@
 package org.example.Model;
 
-import org.example.Model.DAO.UserDAO;
+import org.example.Model.DAO.GuestDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import java.time.LocalDate;
 
-public class UserTest {
-
+public class GuestTest {
     private SessionFactory sessionFactory;
     @BeforeEach
     protected void setUp() {
@@ -34,13 +34,13 @@ public class UserTest {
     }
 
     @Test
-    public void storeUsersInMySQL() {
-        User user = new User( "Victor", "1234", false);
+    public void storeGuestInMySQL() {
+        Guest guest = new Guest("0501-2005-04202", "Victor Jafet", "Espinoza Benitez", LocalDate.of(2005, 3, 3), "31466774", "vespinozabenitez@gmail.com", GuestNationalities.HONDURAS);
 
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             try {
-                session.persist(user);
+                session.persist(guest);
                 transaction.commit();
             } catch (Exception e) {
                 transaction.rollback();
@@ -48,10 +48,9 @@ public class UserTest {
             }
         }
     }
-
     @Test
-    public void verifyUser_DAO() {
-        UserDAO userDAO = new UserDAO();
-        Assertions.assertTrue(userDAO.verifyUser("Victor", "1234"));
+    public void deleteGuestFromMySQL(){
+        GuestDAO guestDAO = new GuestDAO();
+        Assertions.assertTrue(guestDAO.deleteGuest("0501-2005-04202"));
     }
 }

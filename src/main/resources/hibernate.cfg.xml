@@ -15,5 +15,6 @@
         <property name="show_sql">true</property>
 
         <mapping class="org.example.Model.User"/>
+        <mapping class="org.example.Model.Guest"/>
     </session-factory>
 </hibernate-configuration>

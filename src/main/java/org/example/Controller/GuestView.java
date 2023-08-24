@@ -6,13 +6,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import org.example.Main;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class GuestView {
 
@@ -27,10 +30,11 @@ public class GuestView {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("../../Forms/guestForm.fxml"));
             Parent form = loader.load();
+            Image hotelIcon = new Image(Objects.requireNonNull(Main.class.getResourceAsStream("../../Images/hotel.png")));
 
             Stage modalStage = new Stage();
             modalStage.initModality(Modality.APPLICATION_MODAL);
-            modalStage.setTitle("Add Guest");
+            modalStage.getIcons().add(hotelIcon);
 
             ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), form);
             scaleTransition.setFromX(0.5);

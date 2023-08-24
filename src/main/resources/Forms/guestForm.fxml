@@ -5,81 +5,90 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="278.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.GuestForm">
+<VBox fx:id="vBoxContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="277.0" style="-fx-background-color: #e6f3fb;" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.GuestForm">
     <children>
-      <Label text="National ID" textFill="#053445">
+      <Label fx:id="nationalIdLabel1" text="New guest" textFill="#053445">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="nationalIdLabel" text="National ID" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <VBox.margin>
-            <Insets right="90.0" />
+            <Insets right="90.0" top="30.0" />
          </VBox.margin>
       </Label>
-      <TextField maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
-      <Label text="First name" textFill="#053445">
+      <TextField fx:id="nationalIdTextField" maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+      <Label fx:id="firstNameLabel" text="First name" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <VBox.margin>
-            <Insets right="95.0" />
+            <Insets right="95.0" top="10.0" />
          </VBox.margin>
       </Label>
-      <TextField maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
-      <Label text="Last name" textFill="#053445">
+      <TextField fx:id="firstNameTextField" maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+      <Label fx:id="lastNameLabel" text="Last name" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <VBox.margin>
-            <Insets right="95.0" />
+            <Insets right="95.0" top="10.0" />
          </VBox.margin>
       </Label>
-      <TextField maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+      <TextField fx:id="lastNameTextField" maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
       <Label textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label text="Date of birth" textFill="#053445">
+      <Label fx:id="dateOfBirthLabel" text="Date of birth" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <VBox.margin>
-            <Insets right="80.0" />
+            <Insets right="80.0" top="-5.0" />
          </VBox.margin>
       </Label>
-      <DatePicker maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
-      <Label text="Phone number" textFill="#053445">
+      <DatePicker fx:id="dateOfBirthDatePicker" maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+      <Label fx:id="phoneNumberLabel" text="Phone number" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <VBox.margin>
-            <Insets right="65.0" />
+            <Insets right="65.0" top="10.0" />
          </VBox.margin>
       </Label>
-      <TextField maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
-      <Label text="Email" textFill="#053445">
+      <TextField fx:id="phoneNumberTextField" maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+      <Label fx:id="emailLabel" text="Email" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <VBox.margin>
-            <Insets right="120.0" />
+            <Insets right="120.0" top="10.0" />
          </VBox.margin>
       </Label>
-      <TextField maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
-      <Label text="Nationality" textFill="#053445">
+      <TextField fx:id="emailTextField" maxWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+      <Label fx:id="nationalityLabel" text="Nationality" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <VBox.margin>
-            <Insets right="90.0" />
+            <Insets right="90.0" top="10.0" />
          </VBox.margin>
       </Label>
-      <SearchableComboBox maxWidth="150.0" styleClass="searchable-combo-box" stylesheets="@../application.css" />
-        <JFXButton style="-fx-background-color: #dff3ff;" text="Save guest" textFill="#053445">
+      <SearchableComboBox fx:id="nationalitySearchableComboBox" maxWidth="150.0" styleClass="searchable-combo-box" stylesheets="@../application.css" />
+        <JFXButton onAction="#hanleSaveGuestButtonClick" style="-fx-background-color: #053445; -fx-cursor: hand;" text="Save guest" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
@@ -88,4 +97,7 @@
             </VBox.margin>
         </JFXButton>
     </children>
+   <effect>
+      <DropShadow />
+   </effect>
 </VBox>

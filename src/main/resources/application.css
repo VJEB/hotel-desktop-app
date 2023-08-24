@@ -72,4 +72,8 @@
 .jfx-snackbar-content > .label {
     -fx-font-size: 14px;
     -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+}
+.window-header .window-icon {
+    -fx-visibility: hidden;
 }
