@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" stylesheets="@application.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Login">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="848.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.Login">
    <right>
       <ImageView fitHeight="526.0" fitWidth="594.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -77,7 +77,7 @@
                   <Insets right="130.0" top="40.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="usernameField" maxWidth="200.0" promptText="Enter your username" styleClass="loginTextAndPasswordField" stylesheets="@application.css">
+            <TextField fx:id="usernameField" maxWidth="200.0" promptText="Enter your username" styleClass="generalTextField" stylesheets="@application.css">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin></TextField>
@@ -89,7 +89,7 @@
                   <Insets right="130.0" />
                </VBox.margin>
             </Label>
-            <PasswordField fx:id="passwordField" maxWidth="200.0" promptText="Enter your password" styleClass="loginTextAndPasswordField" stylesheets="@application.css">
+            <PasswordField fx:id="passwordField" maxWidth="200.0" promptText="Enter your password" styleClass="generalTextField" stylesheets="@application.css">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin></PasswordField>

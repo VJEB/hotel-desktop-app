@@ -6,17 +6,15 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.example.Main;
 import org.example.Model.DAO.UserDAO;
-
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -83,8 +81,13 @@ public class Login implements Initializable {
     public void showHomeScene() {
         try {
             BorderPane newBorderPane = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("../../userHome.fxml")));
-            borderPane.getChildren().removeAll();
-            borderPane.getChildren().setAll(newBorderPane);
+            Scene newScene = new Scene(newBorderPane);
+            Stage stage = (Stage) borderPane.getScene().getWindow();
+            stage.setScene(newScene);
+            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+            stage.setX((screenBounds.getWidth() - stage.getWidth()) / 2);
+            stage.setY((screenBounds.getHeight() - stage.getHeight()) / 2);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

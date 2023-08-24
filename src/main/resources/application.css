@@ -7,7 +7,8 @@
 .loginExitButton:hover {
     -fx-background-color: red;
 }
-.loginTextAndPasswordField {
+
+.generalTextField {
     -fx-background-color: transparent;
     -fx-background-insets: 0;
     -fx-background-radius: 0;
@@ -16,10 +17,41 @@
     -fx-border-radius: 0;
     -fx-prompt-text-fill: gray;
 }
-.loginTextAndPasswordField:focused {
+
+.generalTextField:focused {
     -fx-border-color: #1291bf;
 }
 
+/* Style the outer container */
+.searchable-combo-box {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #053445;
+    -fx-border-radius: 0;
+    -fx-prompt-text-fill: gray;
+}
+
+.searchable-combo-box:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #1291bf;
+    -fx-border-radius: 0;
+    -fx-prompt-text-fill: gray;
+}
+
+.searchable-combo-box .combo-box-base .text-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: black;
+}
+.date-picker-popup {
+    -fx-background-color: #1291bf;
+}
 .loginButton {
     -fx-background-color: #053445;
     -fx-border-radius: 2px;
@@ -29,12 +61,14 @@
 .loginButton:hover {
     -fx-background-color: #031b24;
 }
+
 .jfx-snackbar-content {
     -fx-background-color: #053445;
     -fx-pref-height: 35px;
     -fx-min-height: 30px;
     -fx-background-radius: 10 10 0 0;
 }
+
 .jfx-snackbar-content > .label {
     -fx-font-size: 14px;
     -fx-text-fill: #fff;
