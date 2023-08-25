@@ -9,7 +9,18 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class GuestDAO {
+    private static List<Guest> cachedGuests;
+
+    public static List<Guest> getCachedGuests() {
+        return cachedGuests;
+    }
+
+    public static void setCachedGuests(List<Guest> guests) {
+        cachedGuests = guests;
+    }
     public void storeGuest(Guest guest) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         try (Session session = sessionFactory.openSession()) {
@@ -48,5 +59,17 @@ public class GuestDAO {
             throw new RuntimeException("Error deleting guest with national id of: " + guestNationalId, e);
         }
     }
-
+    public List<Guest> selectGuestsFromDB() {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+            CriteriaQuery<Guest> criteriaQuery = criteriaBuilder.createQuery(Guest.class);
+            Root<Guest> root = criteriaQuery.from(Guest.class);
+            criteriaQuery.select(root);
+            TypedQuery<Guest> query = session.createQuery(criteriaQuery);
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error getting guests from DB", e);
+        }
+    }
 }

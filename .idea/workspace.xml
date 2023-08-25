@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="Fourth commit 24-08-2023">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/FormHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/DAO/GuestDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Guest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/Model/GuestTest.java" afterDir="false" />
+    <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="Fifth commit 24-08-2023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/DAO/GuestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/DAO/GuestDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Forms/guestForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Forms/guestForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Model/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Model/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/userHomeViews/guestsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/userHomeViews/guestsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Model/GuestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Model/GuestTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,21 +41,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/HP GAMING JAFET/jfoenix9/jfoenix-9.0.10.jar",
-    "onboarding.tips.debug.path": "C:/Users/HP GAMING JAFET/IdeaProjects/Hotel-desktop-app/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.42252067",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP GAMING JAFET/jfoenix9/jfoenix-9.0.10.jar&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP GAMING JAFET/IdeaProjects/Hotel-desktop-app/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.42252067&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\HP GAMING JAFET\IdeaProjects\Hotel-desktop-app\src\main\resources\Icons" />
@@ -75,7 +70,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GuestTest.deleteGuestFromMySQL">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Hotel-desktop-app" />
@@ -100,6 +95,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GuestTest.getGuestsListFromDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hotel-desktop-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.Model" />
+      <option name="MAIN_CLASS_NAME" value="org.example.Model.GuestTest" />
+      <option name="METHOD_NAME" value="getGuestsListFromDB" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GuestTest.storeGuestInMySQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hotel-desktop-app" />
       <extension name="coverage">
@@ -111,22 +122,6 @@
       <option name="PACKAGE_NAME" value="org.example.Model" />
       <option name="MAIN_CLASS_NAME" value="org.example.Model.GuestTest" />
       <option name="METHOD_NAME" value="storeGuestInMySQL" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.getUserFromDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Hotel-desktop-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.Model" />
-      <option name="MAIN_CLASS_NAME" value="org.example.Model.UserTest" />
-      <option name="METHOD_NAME" value="getUserFromDB" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,19 +161,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.GuestTest.getGuestsListFromDB" />
       <item itemvalue="JUnit.GuestTest.deleteGuestFromMySQL" />
       <item itemvalue="JUnit.GuestTest.storeGuestInMySQL" />
-      <item itemvalue="JUnit.UserTest.getUserFromDB" />
       <item itemvalue="JUnit.UserTest.storeUsersInMySQL" />
       <item itemvalue="JUnit.UserTest.verifyUser_DAO" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GuestTest.deleteGuestFromMySQL" />
         <item itemvalue="JUnit.GuestTest.storeGuestInMySQL" />
+        <item itemvalue="JUnit.GuestTest.getGuestsListFromDB" />
+        <item itemvalue="JUnit.GuestTest.deleteGuestFromMySQL" />
         <item itemvalue="JUnit.UserTest.storeUsersInMySQL" />
         <item itemvalue="JUnit.UserTest.verifyUser_DAO" />
-        <item itemvalue="JUnit.UserTest.getUserFromDB" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692893432451</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fifth commit 24-08-2023">
+      <option name="closed" value="true" />
+      <created>1692911426292</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692911426292</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -239,7 +242,8 @@
     <MESSAGE value="Second commit fixed 17-08-2023" />
     <MESSAGE value="Third commit fixed 22-08-2023" />
     <MESSAGE value="Fourth commit 24-08-2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth commit 24-08-2023" />
+    <MESSAGE value="Fifth commit 24-08-2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fifth commit 24-08-2023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
