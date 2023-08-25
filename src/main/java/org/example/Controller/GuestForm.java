@@ -1,7 +1,6 @@
 package org.example.Controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXSnackbar;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -80,12 +79,11 @@ public class GuestForm {
         if (nationalId.isEmpty() || firstName.isEmpty() || lastName.isEmpty() ||
                 dateOfBirth == null || phoneNumber.isEmpty() || email.isEmpty() ||
                 nationality == null) {
-            showSnackbar("Please fill in all fields.");
+            FormHelper.showSnackbar(vBoxContainer,"Please fill in all fields.");
         } else {
             Guest guest = new Guest(nationalId, firstName, lastName, dateOfBirth, phoneNumber, email, nationality);
-            GuestDAO guestDAO = new GuestDAO();
-            guestDAO.storeGuest(guest);
-            showSnackbar("Guest stored!");
+            new GuestDAO().storeGuest(guest);
+            GuestView.addGuestToTable(guest);
             closeForm();
         }
     }
@@ -96,11 +94,6 @@ public class GuestForm {
             saveGuestButton.setText("Save guest");
         });
         delay.play();
-    }
-    private void showSnackbar(String errorMessage) {
-        JFXSnackbar snackbar = new JFXSnackbar(vBoxContainer);
-        Label snackbarLabel = new Label(errorMessage);
-        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(snackbarLabel, Duration.millis(3000)));
     }
 
     public void initialize() {

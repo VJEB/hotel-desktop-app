@@ -10,12 +10,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.tableview2.FilteredTableView?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
 
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="737.0" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.GuestView">
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER_LEFT" prefHeight="72.0" prefWidth="285.0">
                     <children>
                         <Label text="Guests" textFill="#053445">
                             <font>
@@ -27,7 +28,9 @@
                         </Label>
                     </children>
                 </HBox>
-                <HBox alignment="CENTER_RIGHT" prefHeight="72.0" prefWidth="537.0">
+            <CustomTextField fx:id="searchField" promptText="Search" styleClass="generalTextField" />
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                <HBox alignment="CENTER_RIGHT" prefHeight="72.0" prefWidth="388.0">
                     <children>
                         <JFXButton fx:id="newGuestButton" onAction="#showGuestFormModal" style="-fx-background-color: #dff3ff; -fx-cursor: hand;" text="New guest" textFill="#053445">
                             <font>

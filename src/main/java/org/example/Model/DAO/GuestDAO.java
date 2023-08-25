@@ -4,6 +4,8 @@ import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
+import javafx.collections.FXCollections;
+import org.controlsfx.control.tableview2.FilteredTableView;
 import org.example.Model.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,9 +19,11 @@ public class GuestDAO {
     public static List<Guest> getCachedGuests() {
         return cachedGuests;
     }
-
     public static void setCachedGuests(List<Guest> guests) {
         cachedGuests = guests;
+    }
+    public static void addGuestToCachedGuests(Guest guest) {
+       cachedGuests.add(guest);
     }
     public void storeGuest(Guest guest) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
