@@ -101,3 +101,38 @@
     -fx-text-fill: #053445;
     -fx-background-color: #f4fcff;
 }
+
+.delete-button {
+    -fx-cursor: hand;
+    -fx-background-color: #053445;
+    -fx-text-fill: #fff;
+}
+.edit-button {
+    -fx-cursor: hand;
+    -fx-background-color: #053445;
+    -fx-text-fill: #fff;
+}
+.myDialog{
+     -fx-background-color: #053445;
+ }
+ .myDialog .header-panel {
+     -fx-background-color: #053445;
+     -fx-background-image: none;
+ }
+ .myDialog .header-panel .label{
+     -fx-font-size: 18px;
+     -fx-text-fill: #ffffff;
+ }
+ .myDialog .button{
+    -fx-background-color:black;
+    -fx-text-fill:white;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow( three-pass-box, white, 10.0, 0.0, 0.0, 0.0);
+    -fx-cursor:hand;
+  }
+
+ .myDialog .button:hover{
+   -fx-background-color:white;
+   -fx-text-fill:black;
+   -fx-font-weight:bold;
+  }

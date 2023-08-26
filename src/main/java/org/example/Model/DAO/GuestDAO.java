@@ -4,8 +4,6 @@ import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
-import javafx.collections.FXCollections;
-import org.controlsfx.control.tableview2.FilteredTableView;
 import org.example.Model.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,12 +23,32 @@ public class GuestDAO {
     public static void addGuestToCachedGuests(Guest guest) {
        cachedGuests.add(guest);
     }
+    public static void removeGuestFromCachedGuests(Guest guest) {
+        cachedGuests.remove(guest);
+    }
+    public static void updateGuestFromCachedGuests(Guest guestToBeUpdated, Guest guest){
+        cachedGuests.remove(guestToBeUpdated);
+        cachedGuests.add(guest);
+    }
     public void storeGuest(Guest guest) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             try {
                 session.persist(guest);
+                transaction.commit();
+            } catch (Exception e) {
+                transaction.rollback();
+                e.printStackTrace();
+            }
+        }
+    }
+    public void updateGuest(Guest guest) {
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        try (Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            try {
+                session.update(guest);
                 transaction.commit();
             } catch (Exception e) {
                 transaction.rollback();

@@ -74,4 +74,19 @@ public class GuestTest {
             System.out.println("=============================");
         }
     }
+    @Test
+    public void updateGuestInMySQL() {
+        Guest guest = new Guest("1234", "pepito", "juarez", LocalDate.of(2005, 3, 3), "12345678", "pepitojuarezEDITADO@gmail.com", GuestNationalities.UNITED_STATES);
+
+        try (Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            try {
+                session.update(guest);
+                transaction.commit();
+            } catch (Exception e) {
+                transaction.rollback();
+                e.printStackTrace();
+            }
+        }
+    }
 }

@@ -15,6 +15,7 @@ import org.example.Model.Guest;
 import org.example.Model.GuestNationalities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class GuestForm {
 
@@ -63,6 +64,29 @@ public class GuestForm {
     @FXML
     private JFXButton saveGuestButton;
 
+    private Guest guestToUpdate;
+
+    public void setGuestToUpdate(Guest guest) {
+        this.guestToUpdate = guest;
+        populateFormWithGuestData();
+    }
+
+    private void populateFormWithGuestData() {
+        nationalIdTextField.setText(guestToUpdate.getNational_id());
+        nationalIdTextField.setDisable(true);
+        firstNameTextField.setText(guestToUpdate.getFirstName());
+        lastNameTextField.setText(guestToUpdate.getLastName());
+
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dateOfBirth = guestToUpdate.getDateOfBirth();
+        String formattedDate = dateOfBirth.format(dateFormatter);
+        dateOfBirthDatePicker.getEditor().setText(formattedDate);
+        dateOfBirthDatePicker.commitValue();
+
+        phoneNumberTextField.setText(guestToUpdate.getPhoneNumber());
+        emailTextField.setText(guestToUpdate.getEmail());
+        nationalitySearchableComboBox.getSelectionModel().select(guestToUpdate.getNationality());
+    }
     @FXML
     private void hanleSaveGuestButtonClick(){
         saveGuestButton.setDisable(false);
@@ -82,8 +106,14 @@ public class GuestForm {
             FormHelper.showSnackbar(vBoxContainer,"Please fill in all fields.");
         } else {
             Guest guest = new Guest(nationalId, firstName, lastName, dateOfBirth, phoneNumber, email, nationality);
-            new GuestDAO().storeGuest(guest);
-            GuestView.addGuestToTable(guest);
+            if (guestToUpdate != null) {
+                new GuestDAO().updateGuest(guest);
+                GuestView.updateGuestFromTable(guest);
+                System.out.println("Guest updated!");
+            } else {
+                new GuestDAO().storeGuest(guest);
+                GuestView.addGuestToTable(guest);
+            }
             closeForm();
         }
     }

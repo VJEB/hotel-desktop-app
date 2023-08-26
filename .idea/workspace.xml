@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="Sixth commit 24-08-2023">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/pencil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/trash-bin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/warning.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/FormHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/FormHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/DAO/GuestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/DAO/GuestDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Model/GuestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Model/GuestTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +130,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GuestTest.updateGuestInMySQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hotel-desktop-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.Model" />
+      <option name="MAIN_CLASS_NAME" value="org.example.Model.GuestTest" />
+      <option name="METHOD_NAME" value="updateGuestInMySQL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserTest.storeUsersInMySQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hotel-desktop-app" />
       <extension name="coverage">
@@ -137,37 +162,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.verifyUser_DAO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Hotel-desktop-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.Model" />
-      <option name="MAIN_CLASS_NAME" value="org.example.Model.UserTest" />
-      <option name="METHOD_NAME" value="verifyUser_DAO" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.GuestTest.updateGuestInMySQL" />
       <item itemvalue="JUnit.GuestTest.getGuestsListFromDB" />
       <item itemvalue="JUnit.GuestTest.deleteGuestFromMySQL" />
       <item itemvalue="JUnit.GuestTest.storeGuestInMySQL" />
       <item itemvalue="JUnit.UserTest.storeUsersInMySQL" />
-      <item itemvalue="JUnit.UserTest.verifyUser_DAO" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GuestTest.updateGuestInMySQL" />
         <item itemvalue="JUnit.GuestTest.storeGuestInMySQL" />
         <item itemvalue="JUnit.GuestTest.getGuestsListFromDB" />
         <item itemvalue="JUnit.GuestTest.deleteGuestFromMySQL" />
         <item itemvalue="JUnit.UserTest.storeUsersInMySQL" />
-        <item itemvalue="JUnit.UserTest.verifyUser_DAO" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693003945264</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Sixth commit 24-08-2023">
+      <option name="closed" value="true" />
+      <created>1693031816653</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693031816653</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
