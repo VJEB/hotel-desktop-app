@@ -29,7 +29,10 @@
                     </children>
                 </HBox>
             <CustomTextField fx:id="searchField" promptText="Search" styleClass="generalTextField" />
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="searchIconContainer" fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: -20;">
+               <image>
+                  <Image url="@../Icons/search.png" />
+               </image></ImageView>
                 <HBox alignment="CENTER_RIGHT" prefHeight="72.0" prefWidth="388.0">
                     <children>
                         <JFXButton fx:id="newGuestButton" onAction="#showGuestFormModal" style="-fx-background-color: #dff3ff; -fx-cursor: hand;" text="New guest" textFill="#053445">

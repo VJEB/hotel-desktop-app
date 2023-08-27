@@ -63,7 +63,10 @@ public class GuestView {
     @FXML
     private CustomTextField searchField;
 
-    private static ObservableList<Guest> guestsObservableList = FXCollections.observableArrayList();
+    @FXML
+    private ImageView searchIconContainer;
+
+    private static final ObservableList<Guest> guestsObservableList = FXCollections.observableArrayList();
     private static FilteredList<Guest> guestsFilteredList;
 
     private static Guest guestToBeUpdated;
@@ -72,31 +75,51 @@ public class GuestView {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("../../Forms/guestForm.fxml"));
             Parent form = loader.load();
-            Image hotelIcon = new Image(Objects.requireNonNull(Main.class.getResourceAsStream("../../Images/hotel.png")));
 
-            Stage modalStage = new Stage();
-            modalStage.initModality(Modality.APPLICATION_MODAL);
-            modalStage.getIcons().add(hotelIcon);
-
-            ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), form);
-            scaleTransition.setFromX(0.5);
-            scaleTransition.setFromY(0.5);
-            scaleTransition.setToX(1);
-            scaleTransition.setToY(1);
-
-            Scene scene = new Scene(form);
-            modalStage.setScene(scene);
-
-            modalStage.show();
-            scaleTransition.play();
+            Stage modalStage = createModalStage();
+            setupModalAnimation(modalStage, form);
 
             GuestForm guestFormController = loader.getController();
             guestFormController.setStage(modalStage);
+
+            modalStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    private Stage createModalStage() {
+        Stage modalStage = new Stage();
+        modalStage.initModality(Modality.APPLICATION_MODAL);
+
+        Image hotelIcon = new Image(Objects.requireNonNull(Main.class.getResourceAsStream("../../Images/hotel.png")));
+        modalStage.getIcons().add(hotelIcon);
+
+        return modalStage;
+    }
+
+    private void setupModalAnimation(Stage modalStage, Parent form) {
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), form);
+        scaleTransition.setFromX(0.5);
+        scaleTransition.setFromY(0.5);
+        scaleTransition.setToX(1);
+        scaleTransition.setToY(1);
+
+        Scene scene = new Scene(form);
+        modalStage.setScene(scene);
+
+        scaleTransition.setOnFinished(event -> modalStage.show());
+        scaleTransition.play();
+    }
+
     public void initialize() {
+        initializeColumns();
+        setupButtonCellFactory();
+        loadGuestData();
+        setupSearchFieldListeners();
+        setupGuestsObservableListListener();
+    }
+    private void initializeColumns() {
         nationalIdColumn.setCellValueFactory(new PropertyValueFactory<>("national_id"));
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
@@ -104,7 +127,8 @@ public class GuestView {
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         nationalityColumn.setCellValueFactory(new PropertyValueFactory<>("nationality"));
-
+    }
+    private void setupButtonCellFactory() {
         actionsColumn.setCellFactory(column -> new TableCell<Guest, Void>() {
             private final JFXButton updateButton = new JFXButton();
             private final JFXButton deleteButton = new JFXButton();
@@ -203,6 +227,8 @@ public class GuestView {
             }
         });
 
+    }
+    private void loadGuestData() {
         List<Guest> cachedGuests = GuestDAO.getCachedGuests();
         if (cachedGuests == null) {
             List<Guest> newGuestsList = new GuestDAO().selectGuestsFromDB();
@@ -213,9 +239,17 @@ public class GuestView {
             guestsObservableList.setAll(cachedGuests);
             guestsFilteredList = new FilteredList<>(guestsObservableList);
         }
-
         filteredTableView.setItems(guestsObservableList);
+    }
 
+    private void setupSearchFieldListeners() {
+        searchField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                searchIconContainer.setImage(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("../../Icons/search-focused.png"))));
+            } else {
+                searchIconContainer.setImage(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("../../Icons/search.png"))));
+            }
+        });
         searchField.textProperty().addListener((observable, oldValue, newValue) -> {
             ArrayList<Guest> temporaryFilteredTable = updateFilter(newValue);
             if (Objects.equals(newValue, "")){
@@ -226,35 +260,48 @@ public class GuestView {
                 filteredTableView.setItems(FXCollections.observableArrayList(temporaryFilteredTable));
             }
         });
+    }
 
+    private void setupGuestsObservableListListener() {
         guestsObservableList.addListener((ListChangeListener<Guest>) change -> {
             while (change.next()) {
                 if (change.wasAdded()) {
-                    Guest addedGuest = change.getAddedSubList().get(0);
-                    String addedGuestNationalId = addedGuest.getNational_id();
-                    int addedItems = change.getAddedSize();
-                    if (addedItems == 1) {
-                        if (Objects.equals(addedGuestNationalId, guestToBeUpdated.getNational_id())) {
-                            FormHelper.showSnackbar(borderPane, "Guest updated!");
-                        } else {
-                            FormHelper.showSnackbar(borderPane, "Guest added!");
-                        }
-                    }
+                    handleGuestAdded(change);
                 }
                 if(change.wasRemoved()) {
-                    Guest removedGuest = change.getRemoved().get(0);
-                    String removedGuestNationalId = removedGuest.getNational_id();
-                    int removedItems = change.getRemovedSize();
-                    if (removedItems == 1) {
-                        if (!Objects.equals(removedGuestNationalId, guestToBeUpdated.getNational_id())) {
-                            FormHelper.showSnackbar(borderPane, "Guest removed!");
-                        }
-                    }
+                    handleGuestRemoved(change);
                 }
                 searchField.setText("");
             }
         });
+
     }
+    private void handleGuestAdded(ListChangeListener.Change<? extends Guest> change) {
+        Guest addedGuest = change.getAddedSubList().get(0);
+        String addedGuestNationalId = addedGuest.getNational_id();
+        int addedItems = change.getAddedSize();
+        if (addedItems == 1) {
+            if (Objects.equals(addedGuestNationalId, guestToBeUpdated.getNational_id())) {
+                FormHelper.showSnackbar(borderPane, "Guest updated!");
+            } else {
+                FormHelper.showSnackbar(borderPane, "Guest added!");
+            }
+            filteredTableView.refresh();
+        }
+    }
+
+    private void handleGuestRemoved(ListChangeListener.Change<? extends Guest> change) {
+        Guest removedGuest = change.getRemoved().get(0);
+        String removedGuestNationalId = removedGuest.getNational_id();
+        int removedItems = change.getRemovedSize();
+        if (removedItems == 1) {
+            if (!Objects.equals(removedGuestNationalId, guestToBeUpdated.getNational_id())) {
+                FormHelper.showSnackbar(borderPane, "Guest removed!");
+                filteredTableView.refresh();
+            }
+        }
+    }
+
 
     public static void addGuestToTable(Guest guest) {
         guestsObservableList.add(guest);
