@@ -192,11 +192,13 @@ public class GuestView {
 
                 if (empty) {
                     setGraphic(null);
+                    System.out.println("updateItem Override: WITHOUT BUTTONS CELL");
                 } else {
                     HBox buttonContainer = new HBox(updateButton, deleteButton);
                     buttonContainer.setAlignment(Pos.CENTER);
                     buttonContainer.setSpacing(10);
                     setGraphic(buttonContainer);
+                    System.out.println("updateItem Override: BUTTONS CELL");
                 }
             }
         });
@@ -219,6 +221,7 @@ public class GuestView {
             if (Objects.equals(newValue, "")){
                 System.out.println("Empty searchField");
                 filteredTableView.setItems(guestsObservableList);
+                filteredTableView.refresh();
             } else {
                 filteredTableView.setItems(FXCollections.observableArrayList(temporaryFilteredTable));
             }
@@ -252,6 +255,7 @@ public class GuestView {
             }
         });
     }
+
     public static void addGuestToTable(Guest guest) {
         guestsObservableList.add(guest);
         GuestDAO.addGuestToCachedGuests(guest);
