@@ -112,11 +112,11 @@ public class GuestForm {
             Guest guest = new Guest(nationalId, firstName, lastName, dateOfBirth, phoneNumber, email, nationality);
             if (guestToUpdate != null) {
                 new GuestDAO().updateGuest(guest);
-                GuestView.updateGuestFromTable(guest);
+                GuestsView.updateGuestFromTable(guest);
                 System.out.println("Guest updated!");
             } else {
                 new GuestDAO().storeGuest(guest);
-                GuestView.addGuestToTable(guest);
+                GuestsView.addGuestToTable(guest);
             }
             closeForm();
         }

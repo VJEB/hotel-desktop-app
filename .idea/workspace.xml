@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="Tenth commit 27-08-2023">
+    <list default="true" id="daabe5b7-3a85-4060-a18b-3ca4811ab764" name="Changes" comment="Eleventh commit 27-08-2023">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/RoomForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/RoomsView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Forms/roomForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/userHomeViews/roomsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/FormHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/FormHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/GuestsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Forms/guestForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Forms/guestForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Forms/reservationForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Forms/reservationForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/ReservationsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/userHomeViews/guestsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/userHomeViews/guestsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/userHomeViews/reservationsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/userHomeViews/reservationsView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +26,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -289,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693177059393</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Eleventh commit 27-08-2023">
+      <option name="closed" value="true" />
+      <created>1693181688226</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1693181688226</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -304,7 +315,8 @@
     <MESSAGE value="Eighth commit 27-08-2023" />
     <MESSAGE value="ninth commit 27-08-2023" />
     <MESSAGE value="Tenth commit 27-08-2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tenth commit 27-08-2023" />
+    <MESSAGE value="Eleventh commit 27-08-2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eleventh commit 27-08-2023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

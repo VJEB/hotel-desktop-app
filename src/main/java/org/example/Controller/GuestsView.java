@@ -6,7 +6,6 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
@@ -16,23 +15,19 @@ import org.controlsfx.control.textfield.CustomTextField;
 import org.example.Model.DAO.GuestDAO;
 import org.example.Model.Guest;
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import org.example.Main;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
-public class GuestView {
+public class GuestsView {
 
     @FXML
     private FilteredTableView<Guest> filteredTableView;

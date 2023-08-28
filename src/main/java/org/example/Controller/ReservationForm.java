@@ -26,6 +26,7 @@ public class ReservationForm {
 
     private Stage stage;
 
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -64,6 +65,7 @@ public class ReservationForm {
     }
     public void initialize() {
         //closeButton.setOnAction(event -> Platform.exit());
+
 
         setGuestComboBox();
         FormHelper.styleLabelOnElementFocus_(guestComboBox, guestLabel,"#1291bf", "#053445");
