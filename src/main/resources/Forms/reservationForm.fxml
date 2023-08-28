@@ -9,14 +9,22 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="278.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.ReservationForm">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="278.0" style="-fx-background-color: #dff3ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.ReservationForm">
    <children>
+      <Label text="New reservation" textFill="#053445">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="30.0" />
+         </VBox.margin>
+      </Label>
       <Label fx:id="guestLabel" text="Guest" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="5.0" right="120.0" />
+            <Insets bottom="15.0" right="120.0" />
          </VBox.margin>
       </Label>
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="278.0">
@@ -36,7 +44,7 @@
          <VBox.margin>
             <Insets />
          </VBox.margin></TextField>
-      <JFXButton style="-fx-background-color: #dff3ff;" text="Save reservation" textFill="#053445">
+      <JFXButton style="-fx-background-color: #053445;" text="Save reservation" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

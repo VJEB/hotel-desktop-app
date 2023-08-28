@@ -76,8 +76,8 @@ public class GuestView {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("../../Forms/guestForm.fxml"));
             Parent form = loader.load();
 
-            Stage modalStage = createModalStage();
-            setupModalAnimation(modalStage, form);
+            Stage modalStage = FormHelper.createModalStage();
+            FormHelper.setupModalAnimation(modalStage, form);
 
             GuestForm guestFormController = loader.getController();
             guestFormController.setStage(modalStage);
@@ -86,30 +86,6 @@ public class GuestView {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private Stage createModalStage() {
-        Stage modalStage = new Stage();
-        modalStage.initModality(Modality.APPLICATION_MODAL);
-
-        Image hotelIcon = new Image(Objects.requireNonNull(Main.class.getResourceAsStream("../../Images/hotel.png")));
-        modalStage.getIcons().add(hotelIcon);
-
-        return modalStage;
-    }
-
-    private void setupModalAnimation(Stage modalStage, Parent form) {
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), form);
-        scaleTransition.setFromX(0.5);
-        scaleTransition.setFromY(0.5);
-        scaleTransition.setToX(1);
-        scaleTransition.setToY(1);
-
-        Scene scene = new Scene(form);
-        modalStage.setScene(scene);
-
-        scaleTransition.setOnFinished(event -> modalStage.show());
-        scaleTransition.play();
     }
     public void initialize() {
         initializeColumns();
@@ -182,13 +158,11 @@ public class GuestView {
 
             if (empty) {
                 setGraphic(null);
-                System.out.println("updateItem Override: WITHOUT BUTTONS CELL");
             } else {
                 HBox buttonContainer = new HBox(updateButton, deleteButton);
                 buttonContainer.setAlignment(Pos.CENTER);
                 buttonContainer.setSpacing(10);
                 setGraphic(buttonContainer);
-                System.out.println("updateItem Override: BUTTONS CELL");
             }
         }
     }
@@ -197,9 +171,9 @@ public class GuestView {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("../../Forms/guestForm.fxml"));
             Parent form = loader.load();
-            Stage modalStage = createModalStage();
+            Stage modalStage = FormHelper.createModalStage();
 
-            setupModalAnimation(modalStage, form);
+            FormHelper.setupModalAnimation(modalStage, form);
 
             GuestForm guestFormController = loader.getController();
             guestFormController.setGuestToUpdate(guest);
@@ -284,7 +258,6 @@ public class GuestView {
                 searchField.setText("");
             }
         });
-
     }
     private void handleGuestAdded(ListChangeListener.Change<? extends Guest> change) {
         Guest addedGuest = change.getAddedSubList().get(0);

@@ -28,21 +28,13 @@ public class ReservationView {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("../../Forms/reservationForm.fxml"));
             Parent form = loader.load();
 
-            Stage modalStage = new Stage();
-            modalStage.initModality(Modality.APPLICATION_MODAL);
-            modalStage.setTitle("Add Reservation");
+            Stage modalStage = FormHelper.createModalStage();
+            FormHelper.setupModalAnimation(modalStage, form);
 
-            ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), form);
-            scaleTransition.setFromX(0.5);
-            scaleTransition.setFromY(0.5);
-            scaleTransition.setToX(1);
-            scaleTransition.setToY(1);
-
-            Scene scene = new Scene(form);
-            modalStage.setScene(scene);
+            ReservationForm reservationFormController = loader.getController();
+            reservationFormController.setStage(modalStage);
 
             modalStage.show();
-            scaleTransition.play();
         } catch (IOException e) {
             e.printStackTrace();
         }

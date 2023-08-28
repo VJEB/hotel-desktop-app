@@ -33,6 +33,9 @@ public class GuestForm {
     private VBox vBoxContainer;
 
     @FXML
+    private Label title;
+
+    @FXML
     private Label nationalIdLabel;
     @FXML
     private Label firstNameLabel;
@@ -69,6 +72,7 @@ public class GuestForm {
     public void setGuestToUpdate(Guest guest) {
         this.guestToUpdate = guest;
         populateFormWithGuestData();
+        title.setText("Edit guest");
     }
 
     private void populateFormWithGuestData() {

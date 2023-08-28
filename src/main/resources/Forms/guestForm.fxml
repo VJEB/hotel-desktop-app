@@ -12,7 +12,7 @@
 
 <VBox fx:id="vBoxContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="277.0" style="-fx-background-color: #e6f3fb;" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.GuestForm">
     <children>
-      <Label fx:id="nationalIdLabel1" text="New guest" textFill="#053445">
+      <Label fx:id="title" text="New guest" textFill="#053445">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

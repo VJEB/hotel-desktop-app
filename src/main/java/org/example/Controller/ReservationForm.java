@@ -7,17 +7,33 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import org.controlsfx.control.SearchableComboBox;
+import org.example.Model.DAO.GuestDAO;
+import org.example.Model.Guest;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ReservationForm {
+
+    private Stage stage;
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public void closeForm() {
+        stage.close();
+    }
+
     @FXML
     private TextField peopleField;
 
@@ -32,29 +48,27 @@ public class ReservationForm {
     @FXML
     private JFXButton closeButton;
 
+    private void setGuestComboBox() {
+        List<Guest> cachedGuests = GuestDAO.getCachedGuests();
+        if (cachedGuests == null) {
+            List<Guest> newGuestsList = new GuestDAO().selectGuestsFromDB();
+            GuestDAO.setCachedGuests(newGuestsList);
+            for (Guest guest : newGuestsList) {
+                guestComboBox.getItems().add(guest.getFirstName() + "\n" + guest.getNational_id());
+            }
+        } else {
+            for (Guest guest : cachedGuests) {
+                guestComboBox.getItems().add(guest.getFirstName() + "\n" + guest.getNational_id());
+            }
+        }
+    }
     public void initialize() {
         //closeButton.setOnAction(event -> Platform.exit());
 
-        guestComboBox.getItems().addAll("Apple", "Banana", "Cherry", "Grapes", "Lemon", "Orange", "Peach", "Pear");
-        peopleField.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                peopleLabel.setStyle("-fx-text-fill: #1291bf;");
-            } else {
-                peopleLabel.setStyle("-fx-text-fill: #053445;");
-            }
-        });
+        setGuestComboBox();
+        FormHelper.styleLabelOnElementFocus_(guestComboBox, guestLabel,"#1291bf", "#053445");
+        FormHelper.styleLabelOnElementFocus(peopleField, peopleLabel,"#1291bf", "#053445");
 
-        guestComboBox.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                guestLabel.setStyle("-fx-text-fill: #1291bf;");
-            } else {
-                guestLabel.setStyle("-fx-text-fill: #053445;");
-            }
-        });
-        peopleField.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                peopleField.setText(newValue.replaceAll("[^\\d]", ""));
-            }
-        });
+        FormHelper.applyRegexFilter(peopleField, "\\d*");
     }
 }
