@@ -92,7 +92,7 @@ public class GuestForm {
         nationalitySearchableComboBox.getSelectionModel().select(guestToUpdate.getNationality());
     }
     @FXML
-    private void hanleSaveGuestButtonClick(){
+    private void handleSaveGuestButtonClick(){
         saveGuestButton.setDisable(false);
         saveGuestButton.setText("Saving guest...");
         enableGuestButtonWithDelay();

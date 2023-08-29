@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXSnackbarLayout;
 import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
@@ -19,6 +20,7 @@ import javafx.util.Duration;
 import org.controlsfx.control.SearchableComboBox;
 import org.example.Main;
 import org.example.Model.GuestNationalities;
+import org.example.Model.RoomTypes;
 
 import java.util.Objects;
 
@@ -46,6 +48,14 @@ public class FormHelper {
         scaleTransition.setOnFinished(event -> modalStage.show());
         scaleTransition.play();
     }
+
+    public static void setupViewTransition(BorderPane viewBorderPane, BorderPane userHomeBorderPane){
+        viewBorderPane.setTranslateX(userHomeBorderPane.getWidth());
+        userHomeBorderPane.setCenter(viewBorderPane);
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(0.2), viewBorderPane);
+        transition.setToX(0);
+        transition.play();
+    }
     //STYLING
     public static void styleLabelOnElementFocus(TextField textField, Label label, String focusedColor, String unfocusedColor) {
         textField.focusedProperty().addListener((observable, oldValue, newValue) -> {
@@ -57,6 +67,15 @@ public class FormHelper {
         });
     }
     public static void styleLabelOnElementFocus(SearchableComboBox<GuestNationalities> searchableComboBox, Label label, String focusedColor, String unfocusedColor) {
+        searchableComboBox.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                label.setStyle("-fx-text-fill: " + focusedColor + ";");
+            } else {
+                label.setStyle("-fx-text-fill: " + unfocusedColor + ";");
+            }
+        });
+    }
+    public static void styleLabelOnElementFocusR(SearchableComboBox<RoomTypes> searchableComboBox, Label label, String focusedColor, String unfocusedColor) {
         searchableComboBox.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
                 label.setStyle("-fx-text-fill: " + focusedColor + ";");

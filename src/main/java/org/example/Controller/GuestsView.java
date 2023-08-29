@@ -189,7 +189,10 @@ public class GuestsView {
         dialogPane.getStylesheets().add(
                 Objects.requireNonNull(Main.class.getResource("../../application.css")).toExternalForm());
         dialogPane.getStyleClass().add("myDialog");
-        dialogPane.setGraphic(new ImageView(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("../../Icons/warning.png")))));
+        ImageView warningImageContainer = new ImageView(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("../../Icons/warning.png"))));
+        warningImageContainer.setFitWidth(38);
+        warningImageContainer.setFitHeight(38);
+        dialogPane.setGraphic(warningImageContainer);
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {

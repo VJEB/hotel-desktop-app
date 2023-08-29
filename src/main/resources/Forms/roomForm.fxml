@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="278.0" style="-fx-background-color: #dff3ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.RoomForm">
+<VBox fx:id="vBoxContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="278.0" style="-fx-background-color: #dff3ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.RoomForm">
     <children>
-        <Label text="New room" textFill="#053445">
+        <Label fx:id="title" text="New room" textFill="#053445">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -19,7 +19,7 @@
                 <Insets bottom="30.0" />
             </VBox.margin>
         </Label>
-      <Label fx:id="guestLabel1" text="Room number" textFill="#053445">
+      <Label fx:id="roomNumberLabel" text="Room number" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -27,8 +27,8 @@
             <Insets right="70.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="peopleField1" maxWidth="150.0" prefHeight="26.0" prefWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
-        <Label fx:id="guestLabel" text="Room type" textFill="#053445">
+      <TextField fx:id="roomNumberTextField" maxWidth="150.0" prefHeight="26.0" prefWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+        <Label fx:id="roomTypeLabel" text="Room type" textFill="#053445">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
@@ -38,10 +38,10 @@
         </Label>
         <HBox alignment="CENTER" prefHeight="34.0" prefWidth="278.0">
             <children>
-                <SearchableComboBox fx:id="guestComboBox" maxWidth="150.0" prefHeight="18.0" prefWidth="150.0" styleClass="searchable-combo-box" stylesheets="@../application.css" />
+                <SearchableComboBox fx:id="roomTypeSearchableComboBox" maxWidth="150.0" prefHeight="18.0" prefWidth="150.0" styleClass="searchable-combo-box" stylesheets="@../application.css" />
             </children>
         </HBox>
-      <Label fx:id="guestLabel11" text="Price" textFill="#053445">
+      <Label fx:id="priceLabel" text="Price" textFill="#053445">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -49,8 +49,8 @@
             <Insets right="125.0" top="20.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="peopleField11" maxWidth="150.0" prefHeight="26.0" prefWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
-        <Label fx:id="peopleLabel" text="Beds" textFill="#053445">
+      <TextField fx:id="priceTextField" maxWidth="150.0" prefHeight="26.0" prefWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+        <Label fx:id="bedsLabel" text="Beds" textFill="#053445">
             <VBox.margin>
                 <Insets right="125.0" top="20.0" />
             </VBox.margin>
@@ -58,11 +58,20 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Label>
-        <TextField fx:id="peopleField" maxWidth="150.0" prefHeight="26.0" prefWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css">
+        <TextField fx:id="bedsTextField" maxWidth="150.0" prefHeight="26.0" prefWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css">
             <VBox.margin>
                 <Insets />
             </VBox.margin></TextField>
-        <JFXButton style="-fx-background-color: #053445;" text="Save room" textFill="WHITE">
+      <Label fx:id="capacityLabel" text="Capacity" textFill="#053445">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets right="100.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+      <TextField fx:id="capacityTextField" maxWidth="150.0" prefHeight="26.0" prefWidth="150.0" styleClass="generalTextField" stylesheets="@../application.css" />
+        <JFXButton fx:id="saveRoomButton" onAction="#handleSaveGuestButtonClick" style="-fx-background-color: #053445;" text="Save room" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>

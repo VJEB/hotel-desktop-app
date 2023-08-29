@@ -77,7 +77,22 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </JFXButton>
-            <VBox alignment="BOTTOM_CENTER" prefHeight="290.0" prefWidth="198.0">
+            <JFXButton graphicTextGap="8.0" onAction="#showRoomsView" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #dff3ff; -fx-cursor: hand;" stylesheets="@application.css" text="Rooms" textFill="#053445">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/bed.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </JFXButton>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="245.0" prefWidth="198.0">
                <children>
                   <ImageView fitHeight="59.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>

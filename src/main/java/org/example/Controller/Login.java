@@ -1,6 +1,5 @@
 package org.example.Controller;
 
-import com.jfoenix.controls.JFXSnackbar;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -53,21 +52,14 @@ public class Login implements Initializable {
         String passwordValue = passwordField.getText();
         try {
             if (userDAO.verifyUser(usernameValue, passwordValue)) {
-                showSnackbar("VERIFIED!");
                 showHomeScene();
             } else {
-                showSnackbar("PASSWORD DOES NOT MATCH");
+                FormHelper.showSnackbar(borderPane,"PASSWORD DOES NOT MATCH");
             }
         } catch (RuntimeException e) {
-            showSnackbar(e.getMessage());
+            FormHelper.showSnackbar(borderPane, e.getMessage());
             e.printStackTrace();
         }
-    }
-    private void showSnackbar(String errorMessage) {
-        JFXSnackbar snackbar = new JFXSnackbar(borderPane);
-        Label snackbarLabel = new Label(errorMessage);
-        snackbar.setPrefWidth(500);
-        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(snackbarLabel, Duration.millis(3000)));
     }
     private void enableLoginButtonWithDelay() {
         PauseTransition delay = new PauseTransition(Duration.seconds(3));
@@ -96,20 +88,8 @@ public class Login implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         exitButton.setOnAction(event -> Platform.exit());
 
-        usernameField.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                usernameLabel.setStyle("-fx-text-fill: #1291bf;");
-            } else {
-                usernameLabel.setStyle("-fx-text-fill: #053445;");
-            }
-        });
+        FormHelper.styleLabelOnElementFocus(usernameField, usernameLabel, "#1291bf", "#053445");
 
-        passwordField.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                passwordLabel.setStyle("-fx-text-fill: #1291bf;");
-            } else {
-                passwordLabel.setStyle("-fx-text-fill: #053445;");
-            }
-        });
+        FormHelper.styleLabelOnElementFocus(passwordField, passwordLabel, "#1291bf", "#053445");
     }
 }

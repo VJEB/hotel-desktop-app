@@ -35,7 +35,7 @@
                     </image></ImageView>
                 <HBox alignment="CENTER_RIGHT" prefHeight="72.0" prefWidth="258.0">
                     <children>
-                        <JFXButton fx:id="newGuestButton" onAction="#showRoomsFormModal" style="-fx-background-color: #dff3ff; -fx-cursor: hand;" text="New room" textFill="#053445">
+                        <JFXButton fx:id="newRoomButton" onAction="#showRoomFormModal" style="-fx-background-color: #dff3ff; -fx-cursor: hand;" text="New room" textFill="#053445">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
@@ -58,11 +58,12 @@
     <center>
         <FilteredTableView fx:id="filteredTableView" styleClass="custom-table" BorderPane.alignment="CENTER">
             <columns>
-                <TableColumn fx:id="roomNumberColumn" prefWidth="150.0" text="Room Number" />
-                <TableColumn fx:id="roomTypeColumn" prefWidth="150.0" text="Room Type" />
-                <TableColumn fx:id="priceColumn" prefWidth="150.0" text="Price" />
-                <TableColumn fx:id="bedsColumn" prefWidth="150.0" text="Beds" />
-                <TableColumn fx:id="actionsColumn" prefWidth="140.0" text="Actions" />
+                <TableColumn fx:id="roomNumberColumn" prefWidth="130.0" text="Room Number" />
+                <TableColumn fx:id="roomTypeColumn" prefWidth="130.0" text="Room Type" />
+                <TableColumn fx:id="priceColumn" prefWidth="130.0" text="Price" />
+                <TableColumn fx:id="bedsColumn" prefWidth="120.0" text="Beds" />
+            <TableColumn fx:id="capacityColumn" prefWidth="120.0" text="Capacity" />
+                <TableColumn fx:id="actionsColumn" prefWidth="120.0" text="Actions" />
             </columns>
         </FilteredTableView>
     </center>

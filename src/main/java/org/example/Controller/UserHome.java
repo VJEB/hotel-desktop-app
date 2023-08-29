@@ -22,11 +22,7 @@ public class UserHome {
     public void showReservationsView() {
         try {
             BorderPane reservationsPane = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("../../userHomeViews/reservationsView.fxml")));
-            reservationsPane.setTranslateX(borderPane.getWidth());
-            borderPane.setCenter(reservationsPane);
-            TranslateTransition transition = new TranslateTransition(Duration.seconds(0.2), reservationsPane);
-            transition.setToX(0);
-            transition.play();
+            FormHelper.setupViewTransition(reservationsPane, borderPane);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,11 +31,7 @@ public class UserHome {
     public void showInvoicesView() {
         try {
             BorderPane invoicesPane = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("../../userHomeViews/invoicesView.fxml")));
-            invoicesPane.setTranslateX(borderPane.getWidth());
-            borderPane.setCenter(invoicesPane);
-            TranslateTransition transition = new TranslateTransition(Duration.seconds(0.2), invoicesPane);
-            transition.setToX(0);
-            transition.play();
+            FormHelper.setupViewTransition(invoicesPane, borderPane);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,11 +39,15 @@ public class UserHome {
     public void showGuestView() {
         try {
             BorderPane guestsPane = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("../../userHomeViews/guestsView.fxml")));
-            guestsPane.setTranslateX(borderPane.getWidth());
-            borderPane.setCenter(guestsPane);
-            TranslateTransition transition = new TranslateTransition(Duration.seconds(0.2), guestsPane);
-            transition.setToX(0);
-            transition.play();
+            FormHelper.setupViewTransition(guestsPane, borderPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void showRoomsView() {
+        try {
+            BorderPane roomsPane = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("../../userHomeViews/roomsView.fxml")));
+            FormHelper.setupViewTransition(roomsPane, borderPane);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -16,5 +16,6 @@
 
         <mapping class="org.example.Model.User"/>
         <mapping class="org.example.Model.Guest"/>
+        <mapping class="org.example.Model.Room"/>
     </session-factory>
 </hibernate-configuration>
